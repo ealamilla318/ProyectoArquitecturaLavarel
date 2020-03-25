@@ -210,7 +210,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
-                            <img src="img/burger/5.png" alt="">
+                            <img src="resources/img/burger/5.png" alt="">
                         </div>
                         <div class="info">
                             <h3>Bull Burgers</h3>
@@ -223,7 +223,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
-                            <img src="img/burger/6.png" alt="">
+                            <img src="resources/img/burger/6.png" alt="">
                         </div>
                         <div class="info">
                             <h3>Rocket Burgers</h3>
@@ -235,7 +235,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
-                            <img src="img/burger/7.png" alt="">
+                            <img src="resources/img/burger/7.png" alt="">
                         </div>
                         <div class="info">
                             <h3>Smokin Burger</h3>
@@ -247,7 +247,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
-                            <img src="img/burger/8.png" alt="">
+                            <img src="resources/img/burger/8.png" alt="">
                         </div>
                         <div class="info">
                             <h3>Delish Burger</h3>
@@ -271,7 +271,7 @@
             <div class="Burger_President_here">
                 <div class="single_Burger_President">
                     <div class="room_thumb">
-                        <img src="img/burgers/1.png" alt="">
+                        <img src="resources/img/burgers/1.png" alt="">
                         <div class="room_heading d-flex justify-content-between align-items-center">
                             <div class="room_heading_inner">
                                 <span>$20</span>
@@ -579,32 +579,32 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
     <!-- JS here -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
+    <script src="resources/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="resources/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="resources/js/popper.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/owl.carousel.min.js"></script>
+    <script src="resources/js/isotope.pkgd.min.js"></script>
+    <script src="resources/js/ajax-form.js"></script>
+    <script src="resources/js/waypoints.min.js"></script>
+    <script src="resources/js/jquery.counterup.min.js"></script>
+    <script src="resources/js/imagesloaded.pkgd.min.js"></script>
+    <script src="resources/js/scrollIt.js"></script>
+    <script src="resources/js/jquery.scrollUp.min.js"></script>
+    <script src="resources/js/wow.min.js"></script>
+    <script src="resources/js/nice-select.min.js"></script>
+    <script src="resources/js/jquery.slicknav.min.js"></script>
+    <script src="resources/js/jquery.magnific-popup.min.js"></script>
+    <script src="resources/js/plugins.js"></script>
 
     <!--contact js-->
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
+    <script src="resources/js/contact.js"></script>
+    <script src="resources/js/jquery.ajaxchimp.min.js"></script>
+    <script src="resources/js/jquery.form.js"></script>
+    <script src="resources/js/jquery.validate.min.js"></script>
+    <script src="resources/js/mail-script.js"></script>
 
-    <script src="js/main.js"></script>
+    <script src="resources/js/main.js"></script>
 
 </body>
 
