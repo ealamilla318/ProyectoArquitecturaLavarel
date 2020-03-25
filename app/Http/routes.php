@@ -19,6 +19,3 @@ Route::get('/react', function () {
 });
 
 
-Route::get('/index', function () {
-    return view('index');
-});
