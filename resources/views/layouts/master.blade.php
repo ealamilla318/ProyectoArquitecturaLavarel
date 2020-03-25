@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <title>Laravel 5 - @yield('title')</title>
+        <title>Jitomates - @yield('title')</title>
     </head>
     <body>
         @section('header')

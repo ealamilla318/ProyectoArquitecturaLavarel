@@ -17,5 +17,8 @@ Route::get('/', function () {
 Route::get('/react', function () {
     return view('react');
 });
+Route::get('/ejemplo', function () {
+    return view('ejemplo');
+});
 
 
