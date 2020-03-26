@@ -23,6 +23,9 @@ Route::get('/ejemplo', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/maxim', function () {
+    return view('maxim');
+});
 
 
 
