@@ -1,41 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-
-    <title>Theme Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap theme -->
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="theme.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+@extends('layouts.master')
+ 
+@section('title', 'Main')
+ 
+@section('header')
+    
+ 
+    
+@stop
+ 
+@section('content')
+     <!-- Fixed navbar -->
+     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -629,16 +604,36 @@
 
 
     </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/docs.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+@stop
+@section('footer')
+<footer class="container-fluid" style="background-color: #343a40; margin-top: 10%; color: white;">
+        <div class="row">
+            <div class="col-11 col-md" style="margin-top: 1.5%;">
+                <img src="img/logo.svg" width="50" height="50" class="d-inline-block align-top" alt="">
+                <small class="d-block mb-3 text-muted">© 2017-2019</small>
+            </div>
+            <div class="col-6 col-md separacion-pie">
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Acerca de nosotros</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md separacion-pie">
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Sugerencias</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md separacion-pie">
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md separacion-pie">
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Politicas de privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+ 
+    
+@stop

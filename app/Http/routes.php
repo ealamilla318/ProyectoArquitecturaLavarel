@@ -20,8 +20,9 @@ Route::get('/react', function () {
 Route::get('/ejemplo', function () {
     return view('ejemplo');
 });
-Route::get('/index', function () {
+Route::get('/home', function () {
     return view('home');
 });
+
 
 
