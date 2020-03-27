@@ -27,6 +27,7 @@ Route::get('/maxim', function () {
     return view('maxim');
 });
 
+Route::post('','UserController@register');
 
 
 
