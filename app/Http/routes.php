@@ -26,6 +26,16 @@ Route::get('/home', function () {
 Route::get('/maxim', function () {
     return view('maxim');
 });
+Route::get('/insertar',array(
+    'as'=>'insertar',
+    'middleware'=>'auth',
+    'uses' => 'CRUD@insertar'
+));
+Route::post('/guardar',array(
+    'as'=>'guardar',
+    'middleware'=>'auth',
+    'uses' => 'CRUD@guardar'
+));
 
 Route::post('','UserController@register');
 
@@ -33,4 +43,7 @@ Route::post('','UserController@register');
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', array(
+    'as'=>'home',
+    'uses' => 'HomeController@index'
+));
