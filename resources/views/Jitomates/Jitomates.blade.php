@@ -15,15 +15,15 @@
 @endif
 <div class="form-group">
     <label for="tipo"></label>
-    <input type="text" class="form-control" id="tipo" name="tipo" value="{old('tipo')}" />
+    <input type="text" class="form-control" id="tipo" name="tipo" value="{{old('tipo')}}" />
 </div>
 <div class="form-group">
     <label for="caja"></label>
-    <input type="text" class="form-control" id="caja" name="caja" value="{old('caja')}"/>
+    <input type="text" class="form-control" id="caja" name="caja" value="{{old('caja')}}"/>
 </div>
 <div class="form-group">
     <label for="calidad"></label>
-    <input type="text" class="form-control" id="calidad" name="calidad" value="{old('calidad')}"/>
+    <input type="text" class="form-control" id="calidad" name="calidad" value="{{old('calidad')}}"/>
 </div>
 <button type="submit" class="btn btn-sucess">Insertar</button>
 </form>

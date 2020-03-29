@@ -14,4 +14,26 @@
         </div>
     </div>
 </div>
+<div class="container">
+<table >
+  <tr>
+    <th>id</th>
+    <th>tipo</th>
+    <th>caja</th>
+    <th>calidad</th>
+  </tr>
+  @foreach($crudes as $crude)
+  <tr>
+    <td>{{$crude->id}}</td>
+    <td>{{$crude->tipo}}</td>
+    <td>{{$crude->caja}}</td>
+    <td>{{$crude->calidad}}</td>
+    <button type="submit" class="btn btn-sucess">Eliminar</button>
+    <button type="submit" class="btn btn-sucess">Editar</button>
+  </tr>
+  @endforeach
+  
+  
+</table>
+</div>
 @endsection
