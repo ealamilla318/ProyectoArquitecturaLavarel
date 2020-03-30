@@ -32,4 +32,11 @@ public function guardar(Request $request){
 
     return redirect()->route('home')->with(array('message'=>'El producto se ha insertado correctamente'));
 }
+public function getJitomate($crude_id){
+    $crude = Crude::find($crude_id);
+    return view ('jitomates.detalles',array(
+        'crude'=> $crude
+    ));
+    
+}
 }

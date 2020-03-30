@@ -23,6 +23,7 @@
     <th>calidad</th>
   </tr>
   @foreach($crudes as $crude)
+  <h2 class="crude-title"><a href="{{route('detalleJitomate',['crude_id'=>$crude->id])}}">{{$crude->calidad}}</a></h2>
   <tr>
     <td>{{$crude->id}}</td>
     <td>{{$crude->tipo}}</td>
