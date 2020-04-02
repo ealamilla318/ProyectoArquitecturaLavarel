@@ -1,13 +1,16 @@
-@extends('layouts.app')
-@section('title', 'Registro')
+@extends('layouts.MasterLayout')
+@section('title', 'Register')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+
+
+    <main class="page registration-page">
+        <section class="clean-block clean-form dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Registration</h2>
+                    
+                </div>
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -74,9 +77,8 @@
                             </div>
                         </div>
                     </form>
-                </div>
             </div>
-        </div>
-    </div>
-</div>
+        </section>
+    </main>
+    
 @endsection
