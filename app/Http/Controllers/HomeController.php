@@ -30,4 +30,11 @@ class HomeController extends Controller
 
         ));
     }
+    public function inventario(){
+        $crudes = Crude::paginate(5);
+        return view('TablaEjemplo',array(
+            'crudes'=>$crudes
+
+        ));
+    }
 }

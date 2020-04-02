@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.MasterLayout')
 
 @section('title', 'Insertar')
 @section('content')
