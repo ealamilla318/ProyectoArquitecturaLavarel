@@ -37,4 +37,7 @@ class HomeController extends Controller
 
         ));
     }
+    public function AdminIndex(){
+        return view('IndexAdmin');
+    }
 }

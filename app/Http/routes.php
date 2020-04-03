@@ -21,6 +21,12 @@ Route::get('/home', function () {
 Route::get('/admin', function () {
     return view('IndexAdmin');
 });
+Route::get('/admin', array(
+    'as'=>'admin',
+    'middleware'=>'auth',
+    'uses' => 'HomeController@AdminIndex'
+));
+
 Route::get('/inventario', array(
     'as'=>'inventario',
     'uses' => 'HomeController@inventario'
