@@ -4,8 +4,8 @@
 
 <main class="page">
         <section class="clean-block slider">
-           
         <div class="container">
+        <a href="{{route('insertar')}}" type="button" class="btn btn-sucess" >Insertar</a>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -13,7 +13,7 @@
                             <th>id</th>
                             <th>tipo</th>
                             <th>caja</th>
-                            <th>calidad</th>
+                            <th>Fecha de Creacion</th>
                             </tr>
                         </thead>
                         @foreach($crudes as $crude)
@@ -23,9 +23,10 @@
                             <td>{{$crude->id}}</td>
                             <td>{{$crude->tipo}}</td>
                             <td>{{$crude->caja}}</td>
-                            <td>{{$crude->calidad}}</td>
-                            <button type="submit" class="btn btn-sucess">Eliminar</button>
-                            <button type="submit" class="btn btn-sucess">Editar</button>
+                            <td>{{ \FormatTime::LongTimeFilter($crude->created_at) }}</td>
+                            
+                            <a href="{{url('/editar/'.$crude->id)}}" type="button" class="btn btn-sucess" >Editar </a>
+                            <a href="{{url('/delete/'.$crude->id)}}" type="button" class="btn btn-sucess" >Eliminar </a>
                             </tr>
                             
                         
