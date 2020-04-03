@@ -4,7 +4,7 @@
     <div class="features-boxed">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">Features </h2>
+                <h2 class="text-center">Menu Administrador</h2>
                 <p class="text-center">Administrador : {{ Auth::user()->name }}</p>
             </div>
             <div class="row justify-content-center features">
