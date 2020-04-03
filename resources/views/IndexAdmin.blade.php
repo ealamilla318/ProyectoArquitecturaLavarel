@@ -20,25 +20,11 @@
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-4 item">
                     <div class="box"><i class="fa fa-list-alt icon"></i>
-                    <h3 class="name"> <a href="{{ url('/inventario') }}">Prueba Jitomates</a></h3>
+                    <h3 class="name"> <a href="{{ url('/inventario') }}">Inventario Empaques</a></h3>
                     
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box"><i class="fa fa-leaf icon"></i>
-                        <h3 class="name">Organic </h3>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box"><i class="fa fa-plane icon"></i>
-                        <h3 class="name">Fast </h3>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box"><i class="fa fa-phone icon"></i>
-                        <h3 class="name">Mobile-first</h3>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
