@@ -24,9 +24,6 @@
                             <td>{{$crude->tipo}}</td>
                             <td>{{$crude->caja}}</td>
                             <td>{{ \FormatTime::LongTimeFilter($crude->created_at) }}</td>
-                            
-                            <a href="{{url('/editar/'.$crude->id)}}" type="button" class="btn btn-sucess" >Editar </a>
-                            <a href="{{url('/delete/'.$crude->id)}}" type="button" class="btn btn-sucess" >Eliminar </a>
                             </tr>
                             
                         
