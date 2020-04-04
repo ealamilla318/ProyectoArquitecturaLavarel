@@ -1,7 +1,7 @@
 @extends('layouts.MasterLayout')
 @section('title', 'Home')
 @section('content')
-   
+  
     <main class="page landing-page">
         <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/tech/image4.jpg&quot;);color:rgba(9, 162, 255, 0.85);">
             <div class="text">

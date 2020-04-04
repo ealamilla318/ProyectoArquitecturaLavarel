@@ -13,7 +13,7 @@
                             <th>id</th>
                             <th>tipo</th>
                             <th>caja</th>
-                            <th>Fecha de Creacion</th>
+                            <th>Fecha</th>
                             </tr>
                         </thead>
                         @foreach($crudes as $crude)
@@ -26,7 +26,7 @@
                             <td>{{ \FormatTime::LongTimeFilter($crude->created_at) }}</td>
                             <td><a href="{{url('/editar/'.$crude->id)}}" type="button" class="btn btn-sucess" >Editar </a></td>
                             <td><a href="{{url('/delete/'.$crude->id)}}" type="button" class="btn btn-sucess" >Eliminar </a></td>
-                            </tr>
+                            </tr>1
                             
                         
                         </tbody>
