@@ -9,7 +9,7 @@
                     
                 </div>
 <form action="{{route('update',['crude_id'=>$crude->id])}}" method="post" enctype="multipart/form-data">
-                {!! csrf_field()!!}
+{!! csrf_field()!!}
 @if($errors->any())
 <div class="alert alert-danger">
     <ul>
