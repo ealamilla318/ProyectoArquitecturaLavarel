@@ -1,5 +1,5 @@
 @extends('layouts.MasterLayout')
-@section('title', 'InventarioJitomates')
+@section('title', 'InventarioAAAAA')
 @section('content')
 
 <main class="page">
@@ -24,6 +24,8 @@
                             <td>{{$crude->tipo}}</td>
                             <td>{{$crude->caja}}</td>
                             <td>{{ \FormatTime::LongTimeFilter($crude->created_at) }}</td>
+                            <td><a href="{{url('/editar/'.$crude->id)}}" type="button" class="btn btn-sucess" >Editar </a></td>
+                            <td><a href="{{url('/delete/'.$crude->id)}}" type="button" class="btn btn-sucess" >Eliminar </a></td>
                             </tr>
                             
                         
