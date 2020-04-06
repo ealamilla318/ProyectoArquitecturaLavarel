@@ -13,10 +13,21 @@ class empaquesController extends Controller
 {
     //
 public function insert(){
-
+return view('Empaques.InsertarE');
 }
-public function save(){
+public function save(Request $request){
+    $validatedData =$this->validate($request,[
+        'material'=> 'required',
+        'capacidad'=>'required'
+    ]);
+    $empaques = new Empaque();
+    $user =\Auth::User();
+    $empaques->material= $request->input('material');
+    $empaques->capacidad= $request->input('capacidad');
+    $empaques->user_id=$user->id;
+    $empaques->save();
 
+    return redirect()->route('TablaE')->with(array('message'=>'El empaque ha sido registrado'));
 }
 public function getEmpaque(){
 
