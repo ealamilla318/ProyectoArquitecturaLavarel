@@ -19,7 +19,7 @@ class herramientasController extends Controller
     public function save(){
     
     }
-    public function getEmpaque(){
+    public function getHerramienta(){
     
     }
     public function delete(){

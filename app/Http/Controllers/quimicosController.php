@@ -19,7 +19,7 @@ class quimicosController extends Controller
     public function save(){
     
     }
-    public function getEmpaque(){
+    public function getQuimico(){
     
     }
     public function delete(){
