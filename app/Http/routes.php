@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/calando', function () {
+    return view('Herramientas.InsertarH');
+});
 Route::get('/admin', function () {
     return view('IndexAdmin');
 });
@@ -70,4 +73,20 @@ Route::get('/editar/{crude_id}', array(
     'as'=>'editar',
     'middleware'=>'auth',
     'uses' => 'CRUD@edit'
+));
+
+//CRUD empaque
+Route::get('/insertarE',array(
+    'as'=>'insertarE',
+    'middleware'=>'auth',
+    'uses' => 'empaquesController@insert'
+));
+Route::post('/guardarE',array(
+    'as'=>'guardarE',
+    'middleware'=>'auth',
+    'uses' => 'empaquesController@save'
+));
+Route::get('/TablaE', array(
+    'as'=>'TablaE',
+    'uses' => 'HomeController@inventarioE'
 ));

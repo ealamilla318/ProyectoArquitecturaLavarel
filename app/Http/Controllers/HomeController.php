@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Crude;
+use App\Empaque;
 class HomeController extends Controller
 {
     /**
@@ -39,5 +40,10 @@ class HomeController extends Controller
     }
     public function AdminIndex(){
         return view('IndexAdmin');
+    }
+
+    public function inventarioE(){
+        $empaque = Empaque::paginate(5);
+        return view('Empaques.TablaE',array('empaque'=>$empaque));
     }
 }
