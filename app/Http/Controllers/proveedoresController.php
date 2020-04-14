@@ -31,16 +31,33 @@ class proveedoresController extends Controller
     $proveedores->save();
     return redirect()->route('TablaP')->with(array('message'=>'El Provedor ha sido registrado'));
     }
-    public function getQuimico(){
+   
+    public function delete($proveedor_id){
+        $user = \Auth::user();
+        $provedor = Proveedore::find($proveedor_id);
     
+        if(!is_null($user) ){
+         $provedor->delete();
+        }
+        return redirect()->route('inventarioP')->with(array('message'=>'El provedor ha sido eliminado'));
     }
-    public function delete(){
-    
+    public function edit($proveedor_id){
+        $user = \Auth::user();
+        $provedor = Proveedore::findOrFail($proveedor_id);
+        if(!is_null($user) ){
+            return view('Proveedores.EditarP',array('provedor' => $provedor));
+           }else{
+            return redirect()->route('home');
+           }
     }
-    public function edit(){
-    
-    }
-    public function update(){
-        
+    public function update($proveedor_id,Request $request){
+        $user = \Auth::user();
+    $provedor = Proveedore::findOrFail($proveedor_id);
+    $provedor->nombre= $request->input('nombre');
+    $provedor->direccion= $request->input('direccion');
+    $provedor->telefono= $request->input('telefono');
+    $provedor->user_id=$user->id;
+    $provedor->update();
+    return redirect()->route('inventarioP')->with(array('message'=>'El provedor se ha actualizado correctamente'));
     }
 }

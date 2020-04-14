@@ -31,16 +31,34 @@ class qmarcasController extends Controller
     $qmarca->save();
     return redirect()->route('TablaHM')->with(array('message'=>'La marca  ha sido registrada'));
     }
-    public function getQuimico(){
+   
+    public function delete($qmarca_id){
+        $user = \Auth::user();
+        $provedor = Qmarca::find($qmarca_id);
     
+        if(!is_null($user) ){
+         $provedor->delete();
+        }
+        return redirect()->route('inventarioP')->with(array('message'=>'El provedor ha sido eliminado'));
     }
-    public function delete(){
-    
+    public function edit($qmarca_id){
+        $user = \Auth::user();
+        $provedor = Qmarca::findOrFail($qmarca_id);
+        if(!is_null($user) ){
+            return view('Proveedores.EditarP',array('provedor' => $provedor));
+           }else{
+            return redirect()->route('home');
+           }
     }
-    public function edit(){
-    
-    }
-    public function update(){
-        
+    public function update($qmarca_id,Request $request){
+        $user = \Auth::user();
+        $provedor = Qmarca::findOrFail($qmarca_id);
+        $provedor->nombre= $request->input('nombre');
+        $provedor->direccion= $request->input('direccion');
+        $provedor->telefono= $request->input('telefono');
+        $provedor->user_id=$user->id;
+        $provedor->update();
+        return redirect()->route('inventarioP')->with(array('message'=>'El provedor se ha actualizado correctamente'));
+        }
     }
 }
