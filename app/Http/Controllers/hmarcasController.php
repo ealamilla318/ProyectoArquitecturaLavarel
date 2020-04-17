@@ -14,7 +14,7 @@ class hmarcasController extends Controller
 {
     //
     public function insert(){
-        return view('Hmarcas.InsertarHM');
+        return view('Hmarcas.InsertarHm');
     }
     public function save(Request $request ){
     $validatedData =$this->validate($request,[
@@ -29,36 +29,35 @@ class hmarcasController extends Controller
     $hmarca->telefono= $request->input('direccion');
     $hmarca->user_id=$user->id;
     $hmarca->save();
-    return redirect()->route('TablaHM')->with(array('message'=>'La marca  ha sido registrada'));
+    return redirect()->route('TablaHm')->with(array('message'=>'La marca  ha sido registrada'));
     }
   
-    public function delete(){
+    public function delete($hmarca_id){
         $user = \Auth::user();
-        $provedor = Proveedore::find($proveedor_id);
+        $provedor = Hmarca::find($hmarca_id);
     
         if(!is_null($user) ){
          $provedor->delete();
         }
-        return redirect()->route('inventarioP')->with(array('message'=>'El provedor ha sido eliminado'));
+        return redirect()->route('inventarioHm')->with(array('message'=>'El provedor ha sido eliminado'));
     }
-    public function edit(){
+    public function edit($hmarca_id){
         $user = \Auth::user();
-        $provedor = Proveedore::findOrFail($proveedor_id);
+        $provedor = Hmarca::findOrFail($hmarca_id);
         if(!is_null($user) ){
-            return view('Proveedores.EditarP',array('provedor' => $provedor));
+            return view('Proveedores.EditarHm',array('provedor' => $provedor));
            }else{
             return redirect()->route('home');
            }
     }
-    public function update(){
+    public function update($hmarca_id,Request $request){
         $user = \Auth::user();
-        $provedor = Proveedore::findOrFail($proveedor_id);
+        $provedor = Hmarca::findOrFail();
         $provedor->nombre= $request->input('nombre');
         $provedor->direccion= $request->input('direccion');
         $provedor->telefono= $request->input('telefono');
         $provedor->user_id=$user->id;
         $provedor->update();
-        return redirect()->route('inventarioP')->with(array('message'=>'El provedor se ha actualizado correctamente'));
+        return redirect()->route('inventarioHm')->with(array('message'=>'El provedor se ha actualizado correctamente'));
         }
     }
-}

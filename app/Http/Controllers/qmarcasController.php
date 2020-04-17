@@ -14,7 +14,7 @@ class qmarcasController extends Controller
 {
     //
     public function insert(){
-        return view('Qmarcas.InsertarQM');
+        return view('Qmarcas.InsertarQm');
     }
     public function save(Request $request ){
     $validatedData =$this->validate($request,[
@@ -29,7 +29,7 @@ class qmarcasController extends Controller
     $qmarca->telefono= $request->input('direccion');
     $qmarca->user_id=$user->id;
     $qmarca->save();
-    return redirect()->route('TablaHM')->with(array('message'=>'La marca  ha sido registrada'));
+    return redirect()->route('TablaQm')->with(array('message'=>'La marca  ha sido registrada'));
     }
    
     public function delete($qmarca_id){
@@ -39,13 +39,13 @@ class qmarcasController extends Controller
         if(!is_null($user) ){
          $provedor->delete();
         }
-        return redirect()->route('inventarioP')->with(array('message'=>'El provedor ha sido eliminado'));
+        return redirect()->route('inventarioQm')->with(array('message'=>'El provedor ha sido eliminado'));
     }
     public function edit($qmarca_id){
         $user = \Auth::user();
         $provedor = Qmarca::findOrFail($qmarca_id);
         if(!is_null($user) ){
-            return view('Proveedores.EditarP',array('provedor' => $provedor));
+            return view('Proveedores.EditarQm',array('provedor' => $provedor));
            }else{
             return redirect()->route('home');
            }
@@ -58,7 +58,7 @@ class qmarcasController extends Controller
         $provedor->telefono= $request->input('telefono');
         $provedor->user_id=$user->id;
         $provedor->update();
-        return redirect()->route('inventarioP')->with(array('message'=>'El provedor se ha actualizado correctamente'));
+        return redirect()->route('inventarioQm')->with(array('message'=>'El provedor se ha actualizado correctamente'));
         }
     }
-}
+
