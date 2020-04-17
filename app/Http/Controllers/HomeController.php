@@ -46,4 +46,16 @@ class HomeController extends Controller
         $empaque = Empaque::paginate(5);
         return view('Empaques.TablaE',array('empaque'=>$empaque));
     }
+    public function inventarioQm(){
+        $qmarca = Empaque::paginate(5);
+        return view('Qmarcas.TablaQM',array('qmarca'=>$qmarca));
+    }
+    public function inventarioHm(){
+        $hmarca = Empaque::paginate(5);
+        return view('Hmarcas.TablaHM',array('hmarca'=>$hmarca));
+    }
+    public function inventarioP(){
+        $proveedore = Empaque::paginate(5);
+        return view('Proveedores.TablaP',array('empaque'=>$proveedore));
+    }
 }

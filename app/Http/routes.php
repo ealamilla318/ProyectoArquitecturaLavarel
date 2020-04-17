@@ -90,3 +90,49 @@ Route::get('/TablaE', array(
     'as'=>'TablaE',
     'uses' => 'HomeController@inventarioE'
 ));
+
+//CRUD Hmarca
+Route::get('/insertarHm',array(
+    'as'=>'insertarHm',
+    'middleware'=>'auth',
+    'uses' => 'hmarcasController@insert'
+));
+Route::post('/guardarHm',array(
+    'as'=>'guardarHm',
+    'middleware'=>'auth',
+    'uses' => 'hmarcasController@save'
+));
+Route::get('/TablaHm', array(
+    'as'=>'TablaHm',
+    'uses' => 'HomeController@inventarioHm'
+));
+//CRUD Qmarca
+Route::get('/insertarQm',array(
+    'as'=>'insertarQm',
+    'middleware'=>'auth',
+    'uses' => 'qmarcasController@insert'
+));
+Route::post('/guardarQm',array(
+    'as'=>'guardarQm',
+    'middleware'=>'auth',
+    'uses' => 'qmarcasController@save'
+));
+Route::get('/TablaQm', array(
+    'as'=>'TablaQm',
+    'uses' => 'HomeController@inventarioQm'
+));
+//CRUD Proveedores
+Route::get('/insertarP',array(
+    'as'=>'insertarP',
+    'middleware'=>'auth',
+    'uses' => 'proveedoresController@insert'
+));
+Route::post('/guardarP',array(
+    'as'=>'guardarP',
+    'middleware'=>'auth',
+    'uses' => 'proveedoresController@save'
+));
+Route::get('/TablaP', array(
+    'as'=>'TablaP',
+    'uses' => 'HomeController@inventarioP'
+));
