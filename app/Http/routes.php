@@ -90,7 +90,21 @@ Route::get('/TablaE', array(
     'as'=>'TablaE',
     'uses' => 'HomeController@inventarioE'
 ));
-
+Route::get('/deleteE/{empaques_id}', array(
+    'as'=>'deleteE',
+    'middleware'=>'auth',
+    'uses' => 'empaquesController@delete'
+));
+Route::get('/editarE/{empaques_id}', array(
+    'as'=>'editarE',
+    'middleware'=>'auth',
+    'uses' => 'empaquesController@edit'
+));
+Route::post('/updateE/{empaques_id}',array(
+    'as'=>'updateE',
+    'middleware'=>'auth',
+    'uses' => 'empaquesController@update'
+));
 //CRUD Hmarca
 Route::get('/insertarHm',array(
     'as'=>'insertarHm',
@@ -105,6 +119,21 @@ Route::post('/guardarHm',array(
 Route::get('/TablaHm', array(
     'as'=>'TablaHm',
     'uses' => 'HomeController@inventarioHm'
+));
+Route::get('/deleteHm/{hmarcas_id}', array(
+    'as'=>'deleteHm',
+    'middleware'=>'auth',
+    'uses' => 'HmarcasController@delete'
+));
+Route::get('/editarHm/{hmarcas_id}', array(
+    'as'=>'editarHm',
+    'middleware'=>'auth',
+    'uses' => 'HmarcasController@edit'
+));
+Route::post('/updateHm/{hmarcas_id}',array(
+    'as'=>'updateHm',
+    'middleware'=>'auth',
+    'uses' => 'HmarcasController@update'
 ));
 //CRUD Qmarca
 Route::get('/insertarQm',array(
@@ -121,6 +150,22 @@ Route::get('/TablaQm', array(
     'as'=>'TablaQm',
     'uses' => 'HomeController@inventarioQm'
 ));
+
+Route::get('/deleteQm/{qmarcas_id}', array(
+    'as'=>'deleteQm',
+    'middleware'=>'auth',
+    'uses' => 'QmarcasController@delete'
+));
+Route::get('/editarQm/{qmarcas_id}', array(
+    'as'=>'editarQm',
+    'middleware'=>'auth',
+    'uses' => 'QmarcasController@edit'
+));
+Route::post('/updateQm/{qmarcas_id}',array(
+    'as'=>'updateQm',
+    'middleware'=>'auth',
+    'uses' => 'QmarcasController@update'
+));
 //CRUD Proveedores
 Route::get('/insertarP',array(
     'as'=>'insertarP',
@@ -135,4 +180,20 @@ Route::post('/guardarP',array(
 Route::get('/TablaP', array(
     'as'=>'TablaP',
     'uses' => 'HomeController@inventarioP'
+));
+
+Route::get('/deleteP/{proveedores_id}', array(
+    'as'=>'deleteP',
+    'middleware'=>'auth',
+    'uses' => 'ProveedoresController@delete'
+));
+Route::get('/editarP/{proveedores_id}', array(
+    'as'=>'editarP',
+    'middleware'=>'auth',
+    'uses' => 'ProveedoresController@edit'
+));
+Route::post('/updateP/{proveedores_id}',array(
+    'as'=>'updateP',
+    'middleware'=>'auth',
+    'uses' => 'ProveedoresController@update'
 ));
