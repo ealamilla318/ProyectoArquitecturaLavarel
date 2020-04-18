@@ -59,6 +59,6 @@ class HomeController extends Controller
     }
     public function inventarioP(){
         $proveedore = Proveedore::paginate(5);
-        return view('Proveedores.TablaP',array('empaque'=>$proveedore));
+        return view('Proveedores.TablaP',array('proveedore'=>$proveedore));
     }
 }
