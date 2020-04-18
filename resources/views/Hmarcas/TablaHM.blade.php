@@ -23,7 +23,7 @@
                             <td>{{$hmarcas->nombre}}</td>
                             <td>{{$hmarcas->direccion}}</td>
                             <td>{{$hmarcas->telefono}}</td>
-                            <td><a href="{{url('/editarHm/'.$hmarcas->id_hmarcas)}}" type="button" class="btn btn-outline-dark">Editar </a><a href="{{url('/deleteHm/'.$hmarcas->id_hmarcas)}}" type="button" class="btn btn-outline-dark" style="margin-left: 8px;">Eliminar </a></td>
+                            <td><a href="{{url('/editarHm/'.$hmarcas->id)}}" type="button" class="btn btn-outline-dark">Editar </a><a href="{{url('/deleteHm/'.$hmarcas->id)}}" type="button" class="btn btn-outline-dark" style="margin-left: 8px;">Eliminar </a></td>
                             </tr>
                             
                         

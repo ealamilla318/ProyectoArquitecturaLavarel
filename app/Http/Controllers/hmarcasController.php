@@ -39,11 +39,11 @@ class hmarcasController extends Controller
         if(!is_null($user) ){
          $provedor->delete();
         }
-        return redirect()->route('inventarioHm')->with(array('message'=>'El provedor ha sido eliminado'));
+        return redirect()->route('TablaHm')->with(array('message'=>'El provedor ha sido eliminado'));
     }
-    public function edit($hmarca_id_hmarcas){
+    public function edit($hmarca_id){
         $user = \Auth::user();
-        $hmarcas = Hmarca::whereColumn('hmarca_id_hmarcas', 'hmarcas.id_hmarcas');
+        $hmarcas = Hmarca::findOrFail($hmarca_id);
         if(!is_null($user) ){
             return view('Hmarcas.EditarHm',array('hmarcas' => $hmarcas));
            }else{
@@ -58,6 +58,6 @@ class hmarcasController extends Controller
         $provedor->telefono= $request->input('telefono');
         $provedor->user_id=$user->id;
         $provedor->update();
-        return redirect()->route('inventarioHm')->with(array('message'=>'El provedor se ha actualizado correctamente'));
+        return redirect()->route('TablaHm')->with(array('message'=>'El provedor se ha actualizado correctamente'));
         }
     }
