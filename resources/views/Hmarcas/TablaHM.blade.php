@@ -14,6 +14,7 @@
                             <th>Nombre</th>
                             <th>Direccion</th>
                             <th>Telefono</th>
+                            <th>Accion</th>
                             </tr>
                         </thead>
                         @foreach($hmarca as $hmarcas)
