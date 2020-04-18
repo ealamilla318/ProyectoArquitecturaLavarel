@@ -1,5 +1,4 @@
 @extends('layouts.MasterLayout')
-
 @section('title', 'Tabla Empaques')
 @section('content')
 <main class="page">
@@ -23,16 +22,9 @@
                             <td>{{$empaques->id}}</td>
                             <td>{{$empaques->material}}</td>
                             <td>{{$empaques->capacidad}}</td>
-<<<<<<< HEAD
                             <td>{{ \FormatTime::LongTimeFilter($empaques->created_at) }}</td>
-                            <td><a href="{{url('/editare/'.$empaques->id)}}" type="button" class="btn btn-outline-dark">Editar </a><a href="{{url('/deleteE/'.$empaques->id)}}" type="button" class="btn btn-outline-dark" style="margin-left: 8px;">Eliminar </a></td>
-=======
-                            
                             <td><a href="{{url('/editarE/'.$empaques->id)}}" type="button" class="btn btn-outline-dark">Editar </a><a href="{{url('/deleteE/'.$empaques->id)}}" type="button" class="btn btn-outline-dark" style="margin-left: 8px;">Eliminar </a></td>
->>>>>>> 91cedf85df4255c0495712fffc7bef0d4eed36af
                             </tr>
-                            
-                        
                         </tbody>
                         @endforeach
                     </table>
