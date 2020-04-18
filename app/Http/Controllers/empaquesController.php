@@ -40,9 +40,9 @@ public function delete($hmarca_id){
 }
 public function edit($hmarca_id){
     $user = \Auth::user();
-    $hmarcas = Empaque::findOrFail($hmarca_id);
+    $empaques = Empaque::findOrFail($hmarca_id);
     if(!is_null($user) ){
-        return view('Hmarcas.EditarHm',array('hmarcas' => $hmarcas));
+        return view('Empaques.EditarE',array('empaques' => $empaques));
        }else{
         return redirect()->route('home');
        }
@@ -50,11 +50,10 @@ public function edit($hmarca_id){
 public function update($hmarca_id,Request $request){
     $user = \Auth::user();
     $provedor = Empaque::findOrFail($hmarca_id);
-    $provedor->nombre= $request->input('nombre');
-    $provedor->direccion= $request->input('direccion');
-    $provedor->telefono= $request->input('telefono');
+    $provedor->capacidad= $request->input('capacidad');
+    $provedor->material= $request->input('material');
     $provedor->user_id=$user->id;
     $provedor->update();
-    return redirect()->route('TablaHm')->with(array('message'=>'El provedor se ha actualizado correctamente'));
+    return redirect()->route('TablaE')->with(array('message'=>'El empaques se ha actualizado correctamente'));
     }
 }
