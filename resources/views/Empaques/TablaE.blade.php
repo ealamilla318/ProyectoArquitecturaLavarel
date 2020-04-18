@@ -12,9 +12,9 @@
                             <tr>
                             <th>id</th>
                             <th>Material</th>
-                            <th>Capacidad</th>
-                            <th></th>
-                            <th></th>
+                            <th>Capacidad (Kg)</th>
+                            <th>Fecha</th>
+                            <th>Accion</th>
                             </tr>
                         </thead>
                         @foreach($empaque as $empaques)
@@ -23,7 +23,7 @@
                             <td>{{$empaques->id}}</td>
                             <td>{{$empaques->material}}</td>
                             <td>{{$empaques->capacidad}}</td>
-                            
+                            <td>{{ \FormatTime::LongTimeFilter($empaques->created_at) }}</td>
                             <td><a href="{{url('/editare/'.$empaques->id)}}" type="button" class="btn btn-outline-dark">Editar </a><a href="{{url('/deleteE/'.$empaques->id)}}" type="button" class="btn btn-outline-dark" style="margin-left: 8px;">Eliminar </a></td>
                             </tr>
                             

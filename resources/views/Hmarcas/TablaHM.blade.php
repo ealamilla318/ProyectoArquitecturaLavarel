@@ -1,6 +1,6 @@
 @extends('layouts.MasterLayout')
 
-@section('title', 'Editar Quimico')
+@section('title', 'Marcas Herramientas')
 @section('content')
 <main class="page">
         <section class="clean-block slider">
@@ -14,6 +14,7 @@
                             <th>Nombre</th>
                             <th>Direccion</th>
                             <th>Telefono</th>
+                            <th>Fecha</th>
                             <th>Accion</th>
                             </tr>
                         </thead>
@@ -24,6 +25,7 @@
                             <td>{{$hmarcas->nombre}}</td>
                             <td>{{$hmarcas->direccion}}</td>
                             <td>{{$hmarcas->telefono}}</td>
+                            <td>{{ \FormatTime::LongTimeFilter($hmarcas->created_at) }}</td>
                             <td><a href="{{url('/editarHm/'.$hmarcas->id)}}" type="button" class="btn btn-outline-dark">Editar </a><a href="{{url('/deleteHm/'.$hmarcas->id)}}" type="button" class="btn btn-outline-dark" style="margin-left: 8px;">Eliminar </a></td>
                             </tr>
                             

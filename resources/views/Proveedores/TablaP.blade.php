@@ -14,6 +14,8 @@
                             <th>Nombre</th>
                             <th>Direccion</th>
                             <th>Telefono</th>
+                            <th>Fecha</th>
+                            <th>Accion</th>
                             </tr>
                         </thead>
                         @foreach($proveedore as $proveedores)
@@ -23,6 +25,7 @@
                             <td>{{$proveedores->nombre}}</td>
                             <td>{{$proveedores->direccion}}</td>
                             <td>{{$proveedores->telefono}}</td>
+                            <td>{{ \FormatTime::LongTimeFilter($proveedores->created_at) }}</td>
                             <td><a href="{{url('/editarP/'.$proveedores->id)}}" type="button" class="btn btn-outline-dark">Editar </a><a href="{{url('/deleteP/'.$proveedores->id)}}" type="button" class="btn btn-outline-dark" style="margin-left: 8px;">Eliminar </a></td>
                             </tr>
                             
