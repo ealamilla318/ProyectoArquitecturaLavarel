@@ -13,9 +13,8 @@
                             <th>id</th>
                             <th>Tipo</th>
                             <th>Caja</th>
-                            <th>Fecha</th>
-                            <th></th>
-                            <th></th>
+                            <th>Fecha   </th>
+                            <th>Accion</th>
                             </tr>
                         </thead>
                         @foreach($crudes as $crude)
