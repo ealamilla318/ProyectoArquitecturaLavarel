@@ -20,7 +20,7 @@
                         @foreach($empaque as $empaques)
                         <tbody>
                             <tr>
-                            <td>{{$empaques->id_empaque}}</td>
+                            <td>{{$empaques->id}}</td>
                             <td>{{$empaques->material}}</td>
                             <td>{{$empaques->capacidad}}</td>
                             

@@ -39,13 +39,13 @@ class proveedoresController extends Controller
         if(!is_null($user) ){
          $provedor->delete();
         }
-        return redirect()->route('inventarioP')->with(array('message'=>'El provedor ha sido eliminado'));
+        return redirect()->route('TablaP')->with(array('message'=>'El provedor ha sido eliminado'));
     }
     public function edit($proveedor_id){
         $user = \Auth::user();
-        $provedor = Proveedore::findOrFail($proveedor_id);
+        $provedores = Proveedore::findOrFail($proveedor_id);
         if(!is_null($user) ){
-            return view('Proveedores.EditarP',array('provedor' => $provedor));
+            return view('Proveedores.EditarP',array('proveedores' => $provedores));
            }else{
             return redirect()->route('home');
            }
@@ -58,6 +58,6 @@ class proveedoresController extends Controller
     $provedor->telefono= $request->input('telefono');
     $provedor->user_id=$user->id;
     $provedor->update();
-    return redirect()->route('inventarioP')->with(array('message'=>'El provedor se ha actualizado correctamente'));
+    return redirect()->route('TablaP')->with(array('message'=>'El provedor se ha actualizado correctamente'));
     }
 }
