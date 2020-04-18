@@ -20,11 +20,11 @@
                         @foreach($empaque as $empaques)
                         <tbody>
                             <tr>
-                            <td>{{$empaques->id_empaque}}</td>
+                            <td>{{$empaques->id}}</td>
                             <td>{{$empaques->material}}</td>
                             <td>{{$empaques->capacidad}}</td>
                             
-                            <td><a href="{{url('/editar/'.$empaques->id)}}" type="button" class="btn btn-outline-dark">Editar </a><a href="{{url('/delete/'.$empaques->id)}}" type="button" class="btn btn-outline-dark" style="margin-left: 8px;">Eliminar </a></td>
+                            <td><a href="{{url('/editare/'.$empaques->id)}}" type="button" class="btn btn-outline-dark">Editar </a><a href="{{url('/deleteE/'.$empaques->id)}}" type="button" class="btn btn-outline-dark" style="margin-left: 8px;">Eliminar </a></td>
                             </tr>
                             
                         
