@@ -24,7 +24,25 @@
                     
                     </div>
                 </div>
-                
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-list-alt icon"></i>
+                    <h3 class="name"> <a href="{{ url('/TablaHm') }}">Marcas de Herramientas</a></h3>
+                    
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-list-alt icon"></i>
+                    <h3 class="name"> <a href="{{ url('/TablaQm') }}">Marcas de Quimicos</a></h3>
+                    
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-list-alt icon"></i>
+                    <h3 class="name"> <a href="{{ url('/TablaP') }}">Proveedores</a></h3>
+                    
+                    </div>
+                </div>
+            
             </div>
         </div>
     </div>
