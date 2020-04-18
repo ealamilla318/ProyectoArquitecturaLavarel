@@ -6,6 +6,9 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Crude;
 use App\Empaque;
+use App\Proveedore;
+use App\Hmarca;
+use App\Qmarca;
 class HomeController extends Controller
 {
     /**
@@ -47,15 +50,15 @@ class HomeController extends Controller
         return view('Empaques.TablaE',array('empaque'=>$empaque));
     }
     public function inventarioQm(){
-        $qmarca = Empaque::paginate(5);
+        $qmarca = Qmarca::paginate(5);
         return view('Qmarcas.TablaQM',array('qmarca'=>$qmarca));
     }
     public function inventarioHm(){
-        $hmarca = Empaque::paginate(5);
+        $hmarca = Hmarca::paginate(5);
         return view('Hmarcas.TablaHM',array('hmarca'=>$hmarca));
     }
     public function inventarioP(){
-        $proveedore = Empaque::paginate(5);
+        $proveedore = Proveedore::paginate(5);
         return view('Proveedores.TablaP',array('empaque'=>$proveedore));
     }
 }

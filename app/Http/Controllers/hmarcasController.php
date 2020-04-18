@@ -41,11 +41,11 @@ class hmarcasController extends Controller
         }
         return redirect()->route('inventarioHm')->with(array('message'=>'El provedor ha sido eliminado'));
     }
-    public function edit($hmarca_id){
+    public function edit($hmarca_id_hmarcas){
         $user = \Auth::user();
-        $provedor = Hmarca::findOrFail($hmarca_id);
+        $hmarcas = Hmarca::whereColumn('hmarca_id_hmarcas', 'hmarcas.id_hmarcas');
         if(!is_null($user) ){
-            return view('Proveedores.EditarHm',array('provedor' => $provedor));
+            return view('Hmarcas.EditarHm',array('hmarcas' => $hmarcas));
            }else{
             return redirect()->route('home');
            }
