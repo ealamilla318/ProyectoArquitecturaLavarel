@@ -52,7 +52,7 @@ class hmarcasController extends Controller
     }
     public function update($hmarca_id,Request $request){
         $user = \Auth::user();
-        $provedor = Hmarca::findOrFail();
+        $provedor = Hmarca::findOrFail($hmarca_id);
         $provedor->nombre= $request->input('nombre');
         $provedor->direccion= $request->input('direccion');
         $provedor->telefono= $request->input('telefono');
