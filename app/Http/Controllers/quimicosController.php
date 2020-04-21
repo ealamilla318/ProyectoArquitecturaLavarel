@@ -22,31 +22,51 @@ return view('Quimicos.InsertarQ');
             'pesoempaque'=>'required',
             'id_provedores'=>'required',
             'fechacaducidad'=>'required',
-            'id_qmarcas'=>'required'
+            'id_qmarcas'=>'required',
+            'cantidad'=>'required'
         ]);
         $quimicos = new Quimico();
         $user =\Auth::User();
         $quimicos->nombre= $request->input('nombre');
         $quimicos->pesoempaque= $request->input('pesoempaque');
-        $quimicos->tipo= $request->input('tipo');
         $quimicos->id_provedores= $request->input('id_provedores');
         $quimicos->fechacaducidad= $request->input('fechacaducidad');
+        $quimicos->cantidad= $request->input('cantidad');
         $quimicos->id_qmarcas= $request->input('id_qmarcas');
         $quimicos->user_id=$user->id;
         $quimicos->save();
     
         return redirect()->route('TablaQ')->with(array('message'=>'El quimico ha sido registrado'));
     }
-    public function getQuimico(){
+    public function delete($quimicos_id){
+        $user = \Auth::user();
+        $provedor = Quimico::find($quimicos_id);
     
+        if(!is_null($user) ){
+         $provedor->delete();
+        }
+        return redirect()->route('TablaQ')->with(array('message'=>'El registro del quimico ha sido eliminado'));
     }
-    public function delete(){
-    
+    public function edit($quimicos_id){
+        $user = \Auth::user();
+        $quimicos = Quimico::findOrFail($quimicos_id);
+        if(!is_null($user) ){
+            return view('Quimicos.EditarQ',array('quimicos' => $quimicos));
+           }else{
+            return redirect()->route('home');
+           }
     }
-    public function edit(){
-    
-    }
-    public function update(){
-        
-    }
+    public function update($quimicos_id,Request $request){
+        $user = \Auth::user();
+        $quimicos = Quimico::findOrFail($quimicos_id);
+        $quimicos->nombre= $request->input('nombre');
+        $quimicos->pesoempaque= $request->input('pesoempaque');
+        $quimicos->id_provedores= $request->input('id_provedores');
+        $quimicos->fechacaducidad= $request->input('fechacaducidad');
+        $quimicos->cantidad= $request->input('cantidad');
+        $quimicos->id_qmarcas= $request->input('id_qmarcas');
+        $quimicos->user_id=$user->id;
+        $quimicos->update();
+        return redirect()->route('TablaQ')->with(array('message'=>'El quimico se ha actualizado correctamente'));
+        }
 }

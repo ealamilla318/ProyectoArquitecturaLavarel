@@ -21,29 +21,49 @@ class herramientasController extends Controller
             'id_provedor'=> 'required',
             'nombre'=>'required',
             'tipo'=>'required',
-            'id_hmarcas'=>'required'
+            'id_hmarcas'=>'required',
+            'estado'=>'required'
         ]);
         $herramientas = new Herramienta();
         $user =\Auth::User();
         $herramientas->id_provedores= $request->input('id_provedores');
         $herramientas->nombre= $request->input('nombre');
         $herramientas->tipo= $request->input('tipo');
+        $herramientas->estado= $request->input('estado');
         $herramientas->id_hmarcas= $request->input('id_hmarcas');
         $herramientas->user_id=$user->id;
         $herramientas->save();
     
         return redirect()->route('TablaH')->with(array('message'=>'La herramienta ha sido registrado'));
     }
-    public function getHerramienta(){
+    public function delete($herramientas_id){
+        $user = \Auth::user();
+        $provedor = Herramienta::find($herramientas_id);
     
+        if(!is_null($user) ){
+         $provedor->delete();
+        }
+        return redirect()->route('TablaH')->with(array('message'=>'La herramienta se ha retirado ha sido eliminado'));
     }
-    public function delete(){
-    
+    public function edit($herramientas_id){
+        $user = \Auth::user();
+        $herramientas = Herramienta::findOrFail($herramientas_id);
+        if(!is_null($user) ){
+            return view('Herramientas.EditarH',array('herramientas' => $herramientas ));
+           }else{
+            return redirect()->route('home');
+           }
     }
-    public function edit(){
-    
-    }
-    public function update(){
-        
-    }
+    public function update($hmarca_id,Request $request){
+        $user = \Auth::user();
+        $herramientas = Herramienta::findOrFail($hmarca_id);
+        $herramientas->id_provedores= $request->input('id_provedores');
+        $herramientas->nombre= $request->input('nombre');
+        $herramientas->tipo= $request->input('tipo');
+        $herramientas->estado= $request->input('estado');
+        $herramientas->id_hmarcas= $request->input('id_hmarcas');
+        $herramientas->user_id=$user->id;
+        $herramientas->update();
+        return redirect()->route('TablaH')->with(array('message'=>'La herramienta  se ha actualizado correctamente'));
+        }
 }

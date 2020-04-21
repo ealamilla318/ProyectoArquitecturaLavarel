@@ -22,6 +22,7 @@
                             <td>{{$empaques->id}}</td>
                             <td>{{$empaques->material}}</td>
                             <td>{{$empaques->capacidad}}</td>
+                            <td>{{$empaques->cantidad}}</td>
                             <td>{{ \FormatTime::LongTimeFilter($empaques->created_at) }}</td>
                             <td><a href="{{url('/editarE/'.$empaques->id)}}" type="button" class="btn btn-outline-dark">Editar </a><a href="{{url('/deleteE/'.$empaques->id)}}" type="button" class="btn btn-outline-dark" style="margin-left: 8px;">Eliminar </a></td>
                             </tr>
