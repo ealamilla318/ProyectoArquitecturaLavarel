@@ -12,8 +12,8 @@
                             <th>id</th>
                             <th>Material</th>
                             <th>Capacidad (Kg)</th>
-                            <th>Fecha</th>
-                            <th>Accion</th>
+                            <th>cantidad</th>
+                            <th>Fecha de Registro</th>
                             </tr>
                         </thead>
                         @foreach($empaque as $empaques)

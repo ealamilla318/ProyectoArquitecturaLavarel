@@ -25,6 +25,7 @@ public function save(Request $request){
     $user =\Auth::User();
     $empaques->material= $request->input('material');
     $empaques->capacidad= $request->input('capacidad');
+    $empaques->cantidad= $request->input('cantidad');
     $empaques->user_id=$user->id;
     $empaques->save();
 
