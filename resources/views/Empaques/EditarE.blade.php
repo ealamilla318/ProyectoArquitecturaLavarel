@@ -28,6 +28,8 @@
 <div class="form-group">
     <label for="caja"></label>
     <input type="text" class="form-control" id="material" name="material" value="{{$empaques->material}}"/>
+</div><p>Cantidad</p>
+    <input type="text" class="form-control" id="cantidad" name="cantidad" value="{{$empaques->cantidad}}"/>
 </div>
 
 <button type="submit" class="btn btn-sucess">Insertar</button>

@@ -43,9 +43,9 @@ class proveedoresController extends Controller
     }
     public function edit($proveedor_id){
         $user = \Auth::user();
-        $provedores = Proveedore::findOrFail($proveedor_id);
+        $proveedores = Proveedore::findOrFail($proveedor_id);
         if(!is_null($user) ){
-            return view('Proveedores.EditarP',array('proveedores' => $provedores));
+            return view('Proveedores.EditarP',array('proveedores' => $proveedores));
            }else{
             return redirect()->route('home');
            }

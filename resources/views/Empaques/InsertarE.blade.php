@@ -29,6 +29,10 @@
     <option value="30" selected>30 KG</option>
 </select>
 </div>
+<div class="form-group">
+<p>Cantidad</p>
+    <input type="text" class="form-control" id="cantidad" name="cantidad" value="{{old('cantidad')}}"/>
+</div>
 <button type="submit" class="btn btn-sucess">Insertar</button>
 </form>
 

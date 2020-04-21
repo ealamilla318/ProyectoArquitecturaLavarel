@@ -2,12 +2,11 @@
 
 @section('title', 'Editar Provedor')
 @section('content')
-
 <main class="page registration-page">
         <section class="clean-block clean-form dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Editar Proveedor</h2>
+                    <h2 class="text-info">Editar marcas de herramientas</h2>
                     
                 </div>
 <form action="{{route('updateP',['proveedores_id'=>$proveedores->id])}}" method="post" enctype="multipart/form-data">
@@ -27,15 +26,17 @@
 </div>
 <div class="form-group">
     <label for="caja"></label>
-    <input type="text" class="form-control" id="direccion" name="direccion" value="{{$proveedores->direccion}}"/>
-</div>
-<div class="form-group">
-    <label for="calidad"></label>
     <input type="text" class="form-control" id="telefono" name="telefono" value="{{$proveedores->telefono}}"/>
 </div>
+<div class="form-group">
+    <label for="caja"></label>
+    <input type="text" class="form-control" id="direccion" name="direccion" value="{{$proveedores->direccion}}"/>
+</div>
+
 <button type="submit" class="btn btn-sucess">Insertar</button>
                 </form>
             </div>
         </section>
     </main>
+
 @endsection

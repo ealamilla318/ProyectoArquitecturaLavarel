@@ -18,7 +18,8 @@ return view('Empaques.InsertarE');
 public function save(Request $request){
     $validatedData =$this->validate($request,[
         'material'=> 'required',
-        'capacidad'=>'required'
+        'capacidad'=>'required',
+        'cantidad'=>'required'
     ]);
     $empaques = new Empaque();
     $user =\Auth::User();
@@ -52,6 +53,7 @@ public function update($hmarca_id,Request $request){
     $provedor = Empaque::findOrFail($hmarca_id);
     $provedor->capacidad= $request->input('capacidad');
     $provedor->material= $request->input('material');
+    $provedor->cantidad= $request->input('cantidad');
     $provedor->user_id=$user->id;
     $provedor->update();
     return redirect()->route('TablaE')->with(array('message'=>'El empaques se ha actualizado correctamente'));
