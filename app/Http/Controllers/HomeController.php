@@ -9,6 +9,8 @@ use App\Empaque;
 use App\Proveedore;
 use App\Hmarca;
 use App\Qmarca;
+use App\Herramienta;
+use App\Quimico;
 class HomeController extends Controller
 {
     /**
@@ -60,5 +62,13 @@ class HomeController extends Controller
     public function inventarioP(){
         $proveedore = Proveedore::paginate(5);
         return view('Proveedores.TablaP',array('proveedore'=>$proveedore));
+    }
+    public function inventarioQ(){
+        $quimico = Quimico::paginate(5);
+        return view('Quimicos.TablaQ',array('quimico'=>$quimico));
+    }
+    public function inventarioH(){
+        $herramienta = Herramienta::paginate(5);
+        return view('Herramientas.TablaH',array('proveedore'=>$herramienta));
     }
 }

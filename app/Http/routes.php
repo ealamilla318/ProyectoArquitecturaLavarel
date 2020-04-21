@@ -197,3 +197,65 @@ Route::post('/updateP/{proveedores_id}',array(
     'middleware'=>'auth',
     'uses' => 'ProveedoresController@update'
 ));
+//crud herramientas
+Route::get('/insertarQ',array(
+    'as'=>'insertarPQ',
+    'middleware'=>'auth',
+    'uses' => 'quimicosController@insert'
+));
+Route::post('/guardarQ',array(
+    'as'=>'guardarQ',
+    'middleware'=>'auth',
+    'uses' => 'quimicosController@save'
+));
+Route::get('/TablaQ', array(
+    'as'=>'TablaQ',
+    'uses' => 'HomeController@inventarioQ'
+));
+
+Route::get('/deleteQ/{quimicos_id}', array(
+    'as'=>'deleteQ',
+    'middleware'=>'auth',
+    'uses' => 'quimicosController@delete'
+));
+Route::get('/editarQ/{quimicos_id}', array(
+    'as'=>'editarQ',
+    'middleware'=>'auth',
+    'uses' => 'quimicosController@edit'
+));
+Route::post('/updateQ/{quimicos_id}',array(
+    'as'=>'updateQ',
+    'middleware'=>'auth',
+    'uses' => 'quimicosController@update'
+));
+//crud quimicos
+Route::get('/insertarH',array(
+    'as'=>'insertarH',
+    'middleware'=>'auth',
+    'uses' => 'herramientasController@insert'
+));
+Route::post('/guardarH',array(
+    'as'=>'guardarH',
+    'middleware'=>'auth',
+    'uses' => 'herramientasController@save'
+));
+Route::get('/TablaH', array(
+    'as'=>'TablaH',
+    'uses' => 'HomeController@inventarioH'
+));
+
+Route::get('/deleteH/{herramientas_id}', array(
+    'as'=>'deleteH',
+    'middleware'=>'auth',
+    'uses' => 'herramientasController@delete'
+));
+Route::get('/editarH/{herramientas_id}', array(
+    'as'=>'editarH',
+    'middleware'=>'auth',
+    'uses' => 'herramientasController@edit'
+));
+Route::post('/updateH/{herramientas_id}',array(
+    'as'=>'updateH',
+    'middleware'=>'auth',
+    'uses' => 'herramientasController@update'
+));
