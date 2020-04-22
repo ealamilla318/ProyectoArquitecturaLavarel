@@ -26,7 +26,7 @@ class herramientasController extends Controller
         ]);
         $herramientas = new Herramienta();
         $user =\Auth::User();
-        $herramientas->id_provedores= $request->input('id_provedores');
+        $herramientas->id_provedores= $request->input('id_provedor');
         $herramientas->nombre= $request->input('nombre');
         $herramientas->tipo= $request->input('tipo');
         $herramientas->estado= $request->input('estado');

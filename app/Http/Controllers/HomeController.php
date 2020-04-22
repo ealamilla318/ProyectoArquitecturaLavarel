@@ -69,6 +69,6 @@ class HomeController extends Controller
     }
     public function inventarioH(){
         $herramienta = Herramienta::paginate(5);
-        return view('Herramientas.TablaH',array('proveedore'=>$herramienta));
+        return view('Herramientas.TablaH',array('herramienta'=>$herramienta));
     }
 }
