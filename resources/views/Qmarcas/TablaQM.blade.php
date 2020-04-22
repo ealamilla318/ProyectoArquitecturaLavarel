@@ -5,6 +5,12 @@
 <main class="page">
         <section class="clean-block slider">
         <div class="container">
+            <form role="search" action="{{url('buscarQm')}}">
+            <div class="form group">
+                <input type="text" class="form-control" placeholder="Busqueda por nombre" name="search">
+
+            </div>
+        <div class="container">
             <a href="{{('insertarQm')}}" type="button" class="btn btn-outline-secondary" style="margin-bottom: 10px; width: 150px; position: relative; left: 85%;">Insertar</a>
                 <div class="table-responsive">
                     <table class="table">
