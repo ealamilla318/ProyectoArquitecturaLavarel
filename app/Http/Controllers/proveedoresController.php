@@ -60,4 +60,11 @@ class proveedoresController extends Controller
     $provedor->update();
     return redirect()->route('TablaP')->with(array('message'=>'El provedor se ha actualizado correctamente'));
     }
+    public function search($search=null ){
+        if(is_null($search)){
+            $search= \Request::get('search');
+        }
+        $result = Proveedore::where('nombre','LIKE','%'.$search.'%')->paginate(5);
+        return view('Proveedores.TablaP',array('proveedore'=>$result,'search'=>$search));
+    }
 }

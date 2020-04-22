@@ -40,7 +40,10 @@ public function delete($hmarca_id){
     }
     return redirect()->route('TablaE')->with(array('message'=>'El provedor ha sido eliminado'));
 }
-public function edit($hmarca_id){
+public function edit($hmarca_id = null ){
+    if(is_null($hmarca_id)){
+        $hmarca_id= \Request::get('empaques_id');
+    }
     $user = \Auth::user();
     $empaques = Empaque::findOrFail($hmarca_id);
     if(!is_null($user) ){
@@ -59,4 +62,12 @@ public function update($hmarca_id,Request $request){
     $provedor->update();
     return redirect()->route('TablaE')->with(array('message'=>'El empaques se ha actualizado correctamente'));
     }
+public function search($search=null ){
+    if(is_null($search)){
+        $search= \Request::get('search');
+    }
+    $result = Empaque::where('material','LIKE','%'.$search.'%')->paginate(5);
+    return view('Empaques.TablaE',array('empaque'=>$result,'search'=>$search));
+}
+
 }

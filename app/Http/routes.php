@@ -95,7 +95,7 @@ Route::get('/deleteE/{empaques_id}', array(
     'middleware'=>'auth',
     'uses' => 'empaquesController@delete'
 ));
-Route::get('/editarE/{empaques_id}', array(
+Route::get('/editarE/{empaques_id?}', array(
     'as'=>'editarE',
     'middleware'=>'auth',
     'uses' => 'empaquesController@edit'
@@ -104,6 +104,11 @@ Route::post('/updateE/{empaques_id}',array(
     'as'=>'updateE',
     'middleware'=>'auth',
     'uses' => 'empaquesController@update'
+));
+Route::get('/buscarE/{search?}', array(
+    'as'=>'buscarE',
+    'middleware'=>'auth',
+    'uses' => 'empaquesController@search'
 ));
 //CRUD Hmarca
 Route::get('/insertarHm',array(
@@ -134,6 +139,11 @@ Route::post('/updateHm/{hmarcas_id}',array(
     'as'=>'updateHm',
     'middleware'=>'auth',
     'uses' => 'HmarcasController@update'
+));
+Route::get('/buscarHm/{search?}', array(
+    'as'=>'buscarHm',
+    'middleware'=>'auth',
+    'uses' => 'hmarcasController@search'
 ));
 //CRUD Qmarca
 Route::get('/insertarQm',array(
@@ -166,6 +176,11 @@ Route::post('/updateQm/{qmarcas_id}',array(
     'middleware'=>'auth',
     'uses' => 'QmarcasController@update'
 ));
+Route::get('/buscarQm/{search?}', array(
+    'as'=>'buscarQm',
+    'middleware'=>'auth',
+    'uses' => 'qmarcasController@search'
+));
 //CRUD Proveedores
 Route::get('/insertarP',array(
     'as'=>'insertarP',
@@ -196,6 +211,11 @@ Route::post('/updateP/{proveedores_id}',array(
     'as'=>'updateP',
     'middleware'=>'auth',
     'uses' => 'ProveedoresController@update'
+));
+Route::get('/buscarP/{search?}', array(
+    'as'=>'buscarP',
+    'middleware'=>'auth',
+    'uses' => 'proveedoresController@search'
 ));
 //crud herramientas
 Route::get('/insertarQ',array(
@@ -228,6 +248,11 @@ Route::post('/updateQ/{quimicos_id}',array(
     'middleware'=>'auth',
     'uses' => 'quimicosController@update'
 ));
+Route::get('/buscarQ/{search?}', array(
+    'as'=>'buscarQ',
+    'middleware'=>'auth',
+    'uses' => 'quimicosController@search'
+));
 //crud quimicos
 Route::get('/insertarH',array(
     'as'=>'insertarH',
@@ -258,4 +283,9 @@ Route::post('/updateH/{herramientas_id}',array(
     'as'=>'updateH',
     'middleware'=>'auth',
     'uses' => 'herramientasController@update'
+));
+Route::get('/buscarH/{search?}', array(
+    'as'=>'buscarH',
+    'middleware'=>'auth',
+    'uses' => 'herramientasController@search'
 ));

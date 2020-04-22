@@ -47,7 +47,7 @@ return view('Quimicos.InsertarQ');
         }
         return redirect()->route('TablaQ')->with(array('message'=>'El registro del quimico ha sido eliminado'));
     }
-    public function edit($quimicos_id){
+    public function edit($quimicos_id ){
         $user = \Auth::user();
         $quimicos = Quimico::findOrFail($quimicos_id);
         if(!is_null($user) ){
@@ -68,5 +68,13 @@ return view('Quimicos.InsertarQ');
         $quimicos->user_id=$user->id;
         $quimicos->update();
         return redirect()->route('TablaQ')->with(array('message'=>'El quimico se ha actualizado correctamente'));
+        }
+        
+        public function search($search=null ){
+            if(is_null($search)){
+                $search= \Request::get('search');
+            }
+            $result = Quimico::where('nombre','LIKE','%'.$search.'%')->paginate(5);
+            return view('Quimicos.TablaQ',array('quimico'=>$result,'search'=>$search));
         }
 }

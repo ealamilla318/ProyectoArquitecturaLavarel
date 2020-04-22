@@ -46,6 +46,7 @@ class herramientasController extends Controller
         return redirect()->route('TablaH')->with(array('message'=>'La herramienta se ha retirado ha sido eliminado'));
     }
     public function edit($herramientas_id){
+
         $user = \Auth::user();
         $herramientas = Herramienta::findOrFail($herramientas_id);
         if(!is_null($user) ){
@@ -65,5 +66,12 @@ class herramientasController extends Controller
         $herramientas->user_id=$user->id;
         $herramientas->update();
         return redirect()->route('TablaH')->with(array('message'=>'La herramienta  se ha actualizado correctamente'));
+        }
+        public function search($search=null ){
+            if(is_null($search)){
+                $search= \Request::get('search');
+            }
+            $result = Herramienta::where('nombre','LIKE','%'.$search.'%')->paginate(5);
+            return view('Herramientas.TablaH',array('herramienta'=>$result,'search'=>$search));
         }
 }

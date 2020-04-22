@@ -60,4 +60,12 @@ class hmarcasController extends Controller
         $provedor->update();
         return redirect()->route('TablaHm')->with(array('message'=>'El provedor se ha actualizado correctamente'));
         }
+        public function search($search=null ){
+            if(is_null($search)){
+                $search= \Request::get('search');
+            }
+            $result = Hmarca::where('nombre','LIKE','%'.$search.'%')->paginate(5);
+            return view('Hmarcas.TablaHM',array('hmarca'=>$result,'search'=>$search));
+        }
+    
     }

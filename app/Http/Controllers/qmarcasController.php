@@ -60,5 +60,12 @@ class qmarcasController extends Controller
         $provedor->update();
         return redirect()->route('inventarioQm')->with(array('message'=>'El provedor se ha actualizado correctamente'));
         }
+        public function search($search=null ){
+            if(is_null($search)){
+                $search= \Request::get('search');
+            }
+            $result = Qmarca::where('nombre','LIKE','%'.$search.'%')->paginate(5);
+            return view('Qmarcas.TablaQM',array('qmarca'=>$result,'search'=>$search));
+        }
     }
 

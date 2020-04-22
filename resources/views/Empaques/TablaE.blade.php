@@ -4,6 +4,12 @@
 <main class="page">
         <section class="clean-block slider">
         <div class="container">
+            <form role="search" action="{{url('buscarE')}}">
+            <div class="form group">
+                <input type="text" class="form-control" placeholder="Busqueda por material" name="search">
+
+            </div>
+            </form>
             <a href="{{route('insertarE')}}" type="button" class="btn btn-outline-secondary" style="margin-bottom: 10px; width: 150px; position: relative; left: 85%;">Insertar</a>
                 <div class="table-responsive">
                     <table class="table">
